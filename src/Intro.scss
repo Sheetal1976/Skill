@@ -1,0 +1,85 @@
+.container {
+	background-color: white;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	transition: height 1s ease;
+}
+h1 {
+	font-size: 65px;
+	font-weight: 600;
+	animation: color 4s infinite alternate;
+
+	@keyframes color {
+		0% {
+			color: white;
+		}
+
+		100% {
+			color: rgb(16, 189, 189);
+		}
+	}
+}
+
+p {
+	font-size: 45px;
+	font-weight: 400;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+h3 {
+	font-size: 45px;
+	font-weight: 400;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cover {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	color: white;
+	background-color: black;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	flex-direction: column;
+	left: 0;
+	bottom: 0;
+	animation: slideUp 1s ease forwards;
+	transform: translateY(0);
+	animation-delay: 8s;
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(100%);
+	}
+}
+
+.hidden .cover {
+	animation: none;
+}
+
+.slide-up .container {
+	height: 0;
+}
+
+.slide-up .container:hover .cover {
+	animation: slideDown 1s ease forwards;
+}
+
+@keyframes slideDown {
+	from {
+		transform: translateY(100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
